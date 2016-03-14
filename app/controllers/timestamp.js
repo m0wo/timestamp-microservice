@@ -1,9 +1,13 @@
 'use strict';
 
-function timestamp(req, res) {
-    //res.json("{}");
-    console.log(req);
+module.exports = function(timestamp) {
+    var dateObj = {unix: null, natural: null};
+    var unix = Date.parse(timestamp);
     
+    if(!isNaN(unix)){
+        dateObj.unix = unix;
+        dateObj.natural = new Date(unix).toDateString();
+    }
+    
+    return dateObj;
 }
-
-module.exports = timestamp;
