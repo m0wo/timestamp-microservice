@@ -1,6 +1,11 @@
+'use strict';
+
+//var Timestamp = require(process.cwd() + '/app/controllers/timestamp.js');
+
 module.exports = function (app) {
     app.route('/')
         .get(function (req, res) {
-            //Unix timestamp service needs to be used here
+            res.send('Hello world!');
+            //Timestamp.timestamp(req, res);
         });
 };
